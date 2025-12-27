@@ -1,0 +1,79 @@
+[project]
+name = "comfyui"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "comfy-cli",
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "tqdm>=4.67.1",
+    "safetensors>=0.7.0",
+    "comfyui-frontend-package==1.35.9",
+    "comfyui-workflow-templates==0.7.64",
+    "comfyui-embedded-docs==0.3.1",
+    "torch",
+    "torchsde",
+    "torchvision",
+    "torchaudio",
+    "numpy>=1.25.0",
+    "einops",
+    "transformers>=4.50.3",
+    "tokenizers>=0.13.3",
+    "sentencepiece",
+    "safetensors>=0.4.2",
+    "aiohttp>=3.11.8",
+    "yarl>=1.18.0",
+    "pyyaml",
+    "Pillow",
+    "scipy",
+    "tqdm",
+    "psutil",
+    "alembic",
+    "SQLAlchemy",
+    "av>=14.2.0",
+    "kornia>=0.7.1",
+    "spandrel",
+    "pydantic~=2.0",
+    "pydantic-settings~=2.0",
+]
+# --extra-index-url https://download.pytorch.org/whl/cu130
+
+[dependency-groups]
+dev = ["black==24.*", "coverage==7.*", "mypy==1.*", "ruff==0.*", "isort==5.*"]
+
+[tool.black]
+line-length = 79
+target-version = ["py312"]
+
+[tool.isort]
+py_version = 312
+profile = "black"
+line_length = 79
+force_single_line = false
+force_sort_within_sections = false
+from_first = false
+order_by_type = true
+no_sections = false
+import_heading_firstparty = "Core Stuff"
+
+[tool.mypy]
+python_version = "3.12"
+namespace_packages = true
+ignore_missing_imports = true
+check_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+asyncio_mode = "auto"
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 79
+indent-width = 4
+target-version = "py312"
+
+[tool.pyright]
+root = ['src']
